@@ -1,94 +1,78 @@
 # AWS-serverless-PROJECT
 
+# Serverless Image Processing Application
 
-This repository contains projects focused on implementing serverless architectures using AWS services. Each project demonstrates a specific use case, showcasing how to leverage AWS Lambda, API Gateway, DynamoDB, S3, and other serverless technologies.
-
----
-
-## Table of Contents
-- [About](#about)
-- [Prerequisites](#prerequisites)
-- [Project Structure](#project-structure)
-- [Setup and Deployment](#setup-and-deployment)
-- [Technologies Used](#technologies-used)
-
+This project demonstrates a serverless application that allows users to upload images to an S3 bucket and apply various image processing techniques using AWS Lambda. The solution uses AWS services to provide a scalable and cost-effective image processing pipeline.
 
 ---
 
-## About
-The AWS Serverless Projects repository is designed to help developers:
-- Understand serverless architecture concepts.
-- Explore hands-on implementations using AWS services.
-- Gain insights into practical serverless solutions for real-world problems.
+## Features
 
-Each project in this repository is self-contained with its own documentation and deployment guide.
+- **Image Upload**: Upload images via a REST API endpoint.
+- **Image Processing**: Apply transformations or effects to uploaded images using serverless functions.
+- **Scalable Architecture**: Utilizes AWS services like Lambda and S3 to handle varying workloads seamlessly.
 
 ---
 
-## Prerequisites
-Before deploying any project in this repository, ensure you have:
-1. An AWS account.
-2. AWS CLI installed and configured on your machine.
-3. Node.js and npm installed.
-4. Basic knowledge of AWS services and serverless principles.
+## Technologies Used
+
+- **AWS S3**: Stores the uploaded and processed images.
+- **AWS Lambda**: Executes the image processing tasks.
+- **AWS API Gateway**: Routes HTTP requests to the serverless backend.
+- **Terraform**: Manages infrastructure as code (IaC) for deploying resources.
+- **Python/Node.js**: Programming languages used for Lambda functions.
 
 ---
 
-## Project Structure
-Each folder in this repository represents an individual serverless project. Here’s a high-level overview:
+## Setup and Deployment
 
-```plaintext
-AWS-serverless-PROJECTS/
-├── project-1/           # First project directory
-│   ├── src/             # Source code for the project
-│   ├── templates/       # CloudFormation or SAM templates
-│   ├── README.md        # Project-specific details
-├── project-2/           # Second project directory
-│   ├── src/             # Source code for the project
-│   ├── templates/       # Deployment templates
-│   ├── README.md        # Project-specific details
-└── ...                  # Additional projects
-```
-##Setup and Deployment
+### Prerequisites
 
-Follow these steps to set up and deploy any project in this repository:
+1. **AWS CLI**: Install and configure it with appropriate credentials.
+2. **Terraform CLI**: Install Terraform for infrastructure provisioning.
+3. **Python or Node.js**: Ensure you have the required runtime environment for the Lambda functions.
 
-Clone the Repository:
-```
-git clone https://github.com/Kartik-yo/AWS-serverless-PROJECTS.git
-cd AWS-serverless-PROJECTS
-```
-Navigate to a Project:
-```
-cd project-name
-```
-Install Dependencies: If the project uses npm, install dependencies:
-```
-npm install
-```
-Deploy the Project: Use AWS SAM or the Serverless Framework to deploy:
+### Steps
 
-Using AWS SAM:
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Kartik-yo/AWS-serverless-PROJECT.git
+   cd AWS-serverless-PROJECT
+2. **Initialize Terraform**:
+   Navigate to the terraform directory and initialize Terraform.
 ```
-sam build
-sam deploy --guided
+cd terraform
+terraform init
 ```
-Using the Serverless Framework:
-```
-serverless deploy
-```
-Test the Deployment:
+3. **Deploy Infrastructure**:
+   Deploy the required AWS resources using Terraform.
 
-- Verify API Gateway endpoints, Lambda functions, or other resources in the AWS Console.
-- Follow testing instructions in the project-specific README.md.
+```
+terraform apply
 
-## Technologies Used:
-The repository uses the following technologies and services:
+```
+4. **Set Up Lambda Functions**:
 
-- AWS Lambda: For executing serverless functions.
-- Amazon API Gateway: To create RESTful APIs.
-- Amazon DynamoDB: A NoSQL database for storing application data.
-- Amazon S3: For hosting static content and storing objects.
-- AWS CloudFormation: Infrastructure as code for resource provisioning.
-- AWS SAM: Simplifies deployment and management of serverless applications.
-- Node.js: For backend logic and handling serverless functions.
+Add your image processing logic in the lambda/ directory.
+Deploy the Lambda function via the AWS Console or CLI.
+
+## Test the Application:
+
+- Use the API Gateway endpoint to upload an image.
+- Verify the processed image in the designated S3 bucket.
+
+## File Structure
+
+AWS-serverless-PROJECT/
+│
+├── terraform/          # Terraform configuration files for AWS resources
+├── lambda/             # Lambda function source code
+├── assets/             # Sample images and outputs
+├── README.md           # Project documentation
+└── LICENSE             # License information
+
+## Usage
+
+- Upload an Image: Send a POST request with an image file to the API Gateway endpoint.
+- Processing: AWS Lambda processes the uploaded image and applies the configured transformations.
+- Retrieve Processed Image: Processed images are saved in a separate folder within the same S3 bucket.
