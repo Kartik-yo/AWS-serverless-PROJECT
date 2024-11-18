@@ -11,8 +11,7 @@ This repository contains projects focused on implementing serverless architectur
 - [Project Structure](#project-structure)
 - [Setup and Deployment](#setup-and-deployment)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ---
 
@@ -83,7 +82,7 @@ Test the Deployment:
 - Verify API Gateway endpoints, Lambda functions, or other resources in the AWS Console.
 - Follow testing instructions in the project-specific README.md.
 
-##Technologies Used:
+## Technologies Used:
 The repository uses the following technologies and services:
 
 - AWS Lambda: For executing serverless functions.
