@@ -61,16 +61,6 @@ Deploy the Lambda function via the AWS Console or CLI.
 - Use the API Gateway endpoint to upload an image.
 - Verify the processed image in the designated S3 bucket.
 
-## File Structure
-```
-AWS-serverless-PROJECT/
-│
-├── terraform/          # Terraform configuration files for AWS resources
-├── lambda/             # Lambda function source code
-├── assets/             # Sample images and outputs
-├── README.md           # Project documentation
-└── LICENSE             # License information
-```
 ## Usage
 
 - Upload an Image: Send a POST request with an image file to the API Gateway endpoint.
