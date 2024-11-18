@@ -1,7 +1,5 @@
 # AWS-serverless-PROJECT
 
-# Serverless Image Processing Application
-
 This project demonstrates a serverless application that allows users to upload images to an S3 bucket and apply various image processing techniques using AWS Lambda. The solution uses AWS services to provide a scalable and cost-effective image processing pipeline.
 
 ---
